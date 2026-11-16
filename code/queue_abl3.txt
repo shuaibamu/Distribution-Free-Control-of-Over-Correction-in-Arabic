@@ -1,0 +1,7 @@
+abl_nopre 3
+abl_nornn 3
+abl_concat 3
+abl_lstm 3
+abl_nodet 3
+abl_norhet 3
+abl_quranclean 3

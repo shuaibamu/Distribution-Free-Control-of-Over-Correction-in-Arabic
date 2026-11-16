@@ -1,0 +1,2 @@
+# run code/cs/leakfree_data.py first, then this queue in two stages (pretraining must finish first)
+[ -f checkpoints/mlm_lf.pt ] || env VARIANT=_lf THREADS=4 python3 code/pretrain.py --epochs 2 --out checkpoints/mlm_lf.pt > results/logs/mlm_lf.log 2>&1

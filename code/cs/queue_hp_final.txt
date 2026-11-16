@@ -1,0 +1,10 @@
+[ -f results/preds/ours_hpbest_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model ours --seed 1 --epochs 5 > results/logs/ours_hpbest_s1.log 2>&1
+[ -f results/preds/ours_hpbest_s2.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model ours --seed 2 --epochs 5 > results/logs/ours_hpbest_s2.log 2>&1
+[ -f results/preds/ours_hpbest_s3.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model ours --seed 3 --epochs 5 > results/logs/ours_hpbest_s3.log 2>&1
+[ -f results/preds/ours_hpbest_s4.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model ours --seed 4 --epochs 5 > results/logs/ours_hpbest_s4.log 2>&1
+[ -f results/preds/ours_hpbest_s5.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model ours --seed 5 --epochs 5 > results/logs/ours_hpbest_s5.log 2>&1
+[ -f results/preds/pt_tagger_hpbest_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model pt_tagger --seed 1 --epochs 5 > results/logs/pt_tagger_hpbest_s1.log 2>&1
+[ -f results/preds/pt_tagger_hpbest_s2.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model pt_tagger --seed 2 --epochs 5 > results/logs/pt_tagger_hpbest_s2.log 2>&1
+[ -f results/preds/pt_tagger_hpbest_s3.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model pt_tagger --seed 3 --epochs 5 > results/logs/pt_tagger_hpbest_s3.log 2>&1
+[ -f results/preds/pt_tagger_hpbest_s4.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model pt_tagger --seed 4 --epochs 5 > results/logs/pt_tagger_hpbest_s4.log 2>&1
+[ -f results/preds/pt_tagger_hpbest_s5.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 LAMBDA=0.5 RHW=8 TAG_SUFFIX=_hpbest python3 code/train.py --model pt_tagger --seed 5 --epochs 5 > results/logs/pt_tagger_hpbest_s5.log 2>&1

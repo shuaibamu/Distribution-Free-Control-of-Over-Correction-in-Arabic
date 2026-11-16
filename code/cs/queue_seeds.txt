@@ -1,0 +1,26 @@
+# seq2seq is the slowest job: start it first
+[ -f results/preds/seq2seq_s3.pt ] || env THREADS=1  python3 code/train.py --model seq2seq --seed 3 --epochs 3 > results/logs/seq2seq_s3.log 2>&1
+[ -f results/preds/seq2seq_s4.pt ] || env THREADS=1  python3 code/train.py --model seq2seq --seed 4 --epochs 3 > results/logs/seq2seq_s4.log 2>&1
+[ -f results/preds/seq2seq_s5.pt ] || env THREADS=1  python3 code/train.py --model seq2seq --seed 5 --epochs 3 > results/logs/seq2seq_s5.log 2>&1
+[ -f results/preds/bilstm_s4.pt ] || env THREADS=1  python3 code/train.py --model bilstm --seed 4 --epochs 3 > results/logs/bilstm_s4.log 2>&1
+[ -f results/preds/bilstm_s5.pt ] || env THREADS=1  python3 code/train.py --model bilstm --seed 5 --epochs 3 > results/logs/bilstm_s5.log 2>&1
+[ -f results/preds/trans_scratch_s4.pt ] || env THREADS=1  python3 code/train.py --model trans_scratch --seed 4 --epochs 3 > results/logs/trans_scratch_s4.log 2>&1
+[ -f results/preds/trans_scratch_s5.pt ] || env THREADS=1  python3 code/train.py --model trans_scratch --seed 5 --epochs 3 > results/logs/trans_scratch_s5.log 2>&1
+[ -f results/preds/pt_tagger_s4.pt ] || env THREADS=1  python3 code/train.py --model pt_tagger --seed 4 --epochs 3 > results/logs/pt_tagger_s4.log 2>&1
+[ -f results/preds/pt_tagger_s5.pt ] || env THREADS=1  python3 code/train.py --model pt_tagger --seed 5 --epochs 3 > results/logs/pt_tagger_s5.log 2>&1
+[ -f results/preds/stack_hybrid_s4.pt ] || env THREADS=1  python3 code/train.py --model stack_hybrid --seed 4 --epochs 3 > results/logs/stack_hybrid_s4.log 2>&1
+[ -f results/preds/stack_hybrid_s5.pt ] || env THREADS=1  python3 code/train.py --model stack_hybrid --seed 5 --epochs 3 > results/logs/stack_hybrid_s5.log 2>&1
+[ -f results/preds/abl_nopre_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_nopre --seed 4 --epochs 3 > results/logs/abl_nopre_s4.log 2>&1
+[ -f results/preds/abl_nopre_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_nopre --seed 5 --epochs 3 > results/logs/abl_nopre_s5.log 2>&1
+[ -f results/preds/abl_nornn_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_nornn --seed 4 --epochs 3 > results/logs/abl_nornn_s4.log 2>&1
+[ -f results/preds/abl_nornn_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_nornn --seed 5 --epochs 3 > results/logs/abl_nornn_s5.log 2>&1
+[ -f results/preds/abl_concat_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_concat --seed 4 --epochs 3 > results/logs/abl_concat_s4.log 2>&1
+[ -f results/preds/abl_concat_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_concat --seed 5 --epochs 3 > results/logs/abl_concat_s5.log 2>&1
+[ -f results/preds/abl_lstm_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_lstm --seed 4 --epochs 3 > results/logs/abl_lstm_s4.log 2>&1
+[ -f results/preds/abl_lstm_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_lstm --seed 5 --epochs 3 > results/logs/abl_lstm_s5.log 2>&1
+[ -f results/preds/abl_nodet_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_nodet --seed 4 --epochs 3 > results/logs/abl_nodet_s4.log 2>&1
+[ -f results/preds/abl_nodet_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_nodet --seed 5 --epochs 3 > results/logs/abl_nodet_s5.log 2>&1
+[ -f results/preds/abl_norhet_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_norhet --seed 4 --epochs 3 > results/logs/abl_norhet_s4.log 2>&1
+[ -f results/preds/abl_norhet_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_norhet --seed 5 --epochs 3 > results/logs/abl_norhet_s5.log 2>&1
+[ -f results/preds/abl_quranclean_s4.pt ] || env THREADS=1  python3 code/train.py --model abl_quranclean --seed 4 --epochs 3 > results/logs/abl_quranclean_s4.log 2>&1
+[ -f results/preds/abl_quranclean_s5.pt ] || env THREADS=1  python3 code/train.py --model abl_quranclean --seed 5 --epochs 3 > results/logs/abl_quranclean_s5.log 2>&1

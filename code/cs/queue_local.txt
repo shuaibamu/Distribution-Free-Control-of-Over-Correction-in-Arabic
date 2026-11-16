@@ -1,0 +1,26 @@
+[ -f results/preds/pt_tagger_s4.pt ] || env THREADS=1  python3 code/train.py --model pt_tagger --seed 4 --epochs 3 > results/logs/pt_tagger_s4.log 2>&1
+[ -f results/preds/stack_hybrid_s4.pt ] || env THREADS=1  python3 code/train.py --model stack_hybrid --seed 4 --epochs 3 > results/logs/stack_hybrid_s4.log 2>&1
+[ -f results/preds/trans_scratch_s4.pt ] || env THREADS=1  python3 code/train.py --model trans_scratch --seed 4 --epochs 3 > results/logs/trans_scratch_s4.log 2>&1
+[ -f results/preds/bilstm_s4.pt ] || env THREADS=1  python3 code/train.py --model bilstm --seed 4 --epochs 3 > results/logs/bilstm_s4.log 2>&1
+[ -f results/preds/pt_tagger_s5.pt ] || env THREADS=1  python3 code/train.py --model pt_tagger --seed 5 --epochs 3 > results/logs/pt_tagger_s5.log 2>&1
+[ -f results/preds/stack_hybrid_s5.pt ] || env THREADS=1  python3 code/train.py --model stack_hybrid --seed 5 --epochs 3 > results/logs/stack_hybrid_s5.log 2>&1
+[ -f results/preds/trans_scratch_s5.pt ] || env THREADS=1  python3 code/train.py --model trans_scratch --seed 5 --epochs 3 > results/logs/trans_scratch_s5.log 2>&1
+[ -f results/preds/bilstm_s5.pt ] || env THREADS=1  python3 code/train.py --model bilstm --seed 5 --epochs 3 > results/logs/bilstm_s5.log 2>&1
+[ -f results/preds/seq2seq_s3.pt ] || env THREADS=1  python3 code/train.py --model seq2seq --seed 3 --epochs 3 > results/logs/seq2seq_s3.log 2>&1
+[ -f checkpoints/mlm_lf.pt ] || env VARIANT=_lf THREADS=1 python3 code/pretrain.py --epochs 2 --out checkpoints/mlm_lf.pt > results/logs/mlm_lf.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/ours_lf_s1.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model ours --seed 1 --epochs 3 > results/logs/ours_lf_s1.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/abl_quranclean_lf_s1.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model abl_quranclean --seed 1 --epochs 3 > results/logs/abl_quranclean_lf_s1.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/ours_lf_s2.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model ours --seed 2 --epochs 3 > results/logs/ours_lf_s2.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/abl_quranclean_lf_s2.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model abl_quranclean --seed 2 --epochs 3 > results/logs/abl_quranclean_lf_s2.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/ours_lf_s3.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model ours --seed 3 --epochs 3 > results/logs/ours_lf_s3.log 2>&1
+while [ ! -f checkpoints/mlm_lf.pt ]; do sleep 60; done; [ -f results/preds/abl_quranclean_lf_s3.pt ] || env THREADS=1 VARIANT=_lf python3 code/train.py --model abl_quranclean --seed 3 --epochs 3 > results/logs/abl_quranclean_lf_s3.log 2>&1
+[ -f results/preds/ours_hp_lr3e-4_d0.1_e3_s1.pt ] || env THREADS=1 LR=3e-4 DROP=0.1 TAG_SUFFIX=_hp_lr3e-4_d0.1_e3 python3 code/train.py --model ours --seed 1 --epochs 3 > results/logs/ours_hp_lr3e-4_d0.1_e3_s1.log 2>&1
+[ -f results/preds/ours_hp_lr3e-4_d0.1_e5_s1.pt ] || env THREADS=1 LR=3e-4 DROP=0.1 TAG_SUFFIX=_hp_lr3e-4_d0.1_e5 python3 code/train.py --model ours --seed 1 --epochs 5 > results/logs/ours_hp_lr3e-4_d0.1_e5_s1.log 2>&1
+[ -f results/preds/ours_hp_lr6e-4_d0.1_e5_s1.pt ] || env THREADS=1 LR=6e-4 DROP=0.1 TAG_SUFFIX=_hp_lr6e-4_d0.1_e5 python3 code/train.py --model ours --seed 1 --epochs 5 > results/logs/ours_hp_lr6e-4_d0.1_e5_s1.log 2>&1
+[ -f results/preds/ours_hp_lr1e-3_d0.1_e3_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 TAG_SUFFIX=_hp_lr1e-3_d0.1_e3 python3 code/train.py --model ours --seed 1 --epochs 3 > results/logs/ours_hp_lr1e-3_d0.1_e3_s1.log 2>&1
+[ -f results/preds/ours_hp_lr1e-3_d0.1_e5_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 TAG_SUFFIX=_hp_lr1e-3_d0.1_e5 python3 code/train.py --model ours --seed 1 --epochs 5 > results/logs/ours_hp_lr1e-3_d0.1_e5_s1.log 2>&1
+[ -f results/preds/pt_tagger_hp_lr3e-4_d0.1_e3_s1.pt ] || env THREADS=1 LR=3e-4 DROP=0.1 TAG_SUFFIX=_hp_lr3e-4_d0.1_e3 python3 code/train.py --model pt_tagger --seed 1 --epochs 3 > results/logs/pt_tagger_hp_lr3e-4_d0.1_e3_s1.log 2>&1
+[ -f results/preds/pt_tagger_hp_lr3e-4_d0.1_e5_s1.pt ] || env THREADS=1 LR=3e-4 DROP=0.1 TAG_SUFFIX=_hp_lr3e-4_d0.1_e5 python3 code/train.py --model pt_tagger --seed 1 --epochs 5 > results/logs/pt_tagger_hp_lr3e-4_d0.1_e5_s1.log 2>&1
+[ -f results/preds/pt_tagger_hp_lr6e-4_d0.1_e5_s1.pt ] || env THREADS=1 LR=6e-4 DROP=0.1 TAG_SUFFIX=_hp_lr6e-4_d0.1_e5 python3 code/train.py --model pt_tagger --seed 1 --epochs 5 > results/logs/pt_tagger_hp_lr6e-4_d0.1_e5_s1.log 2>&1
+[ -f results/preds/pt_tagger_hp_lr1e-3_d0.1_e3_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 TAG_SUFFIX=_hp_lr1e-3_d0.1_e3 python3 code/train.py --model pt_tagger --seed 1 --epochs 3 > results/logs/pt_tagger_hp_lr1e-3_d0.1_e3_s1.log 2>&1
+[ -f results/preds/pt_tagger_hp_lr1e-3_d0.1_e5_s1.pt ] || env THREADS=1 LR=1e-3 DROP=0.1 TAG_SUFFIX=_hp_lr1e-3_d0.1_e5 python3 code/train.py --model pt_tagger --seed 1 --epochs 5 > results/logs/pt_tagger_hp_lr1e-3_d0.1_e5_s1.log 2>&1
